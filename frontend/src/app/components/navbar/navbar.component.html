@@ -1,0 +1,43 @@
+<nav class="relative container mx-auto px-6 py-4">
+  <div class="flex items-center justify-between">
+    <div class="logo">
+      <h1>LOGO</h1>
+    </div>
+    <div class="menu hidden md:flex space-x-4 list-none">
+      <a routerLink="" class="font-medium hover:text-gray-500">About</a>
+      <a routerLink="" class="font-medium hover:text-gray-500">Faculty</a>
+      <a routerLink="" class="font-medium hover:text-gray-500">Organization</a>
+      <a routerLink="" class="font-medium hover:text-gray-500">LMS</a>
+      <a routerLink="" class="font-medium hover:text-gray-500">Careers</a>
+      <a routerLink="" class="font-medium hover:text-gray-500">More</a>
+    </div>
+    <div class="feedback">
+      <a routerLink="" class="px-4 py-2 rounded-full text-white bg-emerald-600">
+        Feedback
+      </a>
+    </div>
+    <div class="hamburger-icon md:hidden">
+      <button
+        class="block hamburger focus:outline-none {{
+          hamburgerOpen ? 'close' : ''
+        }}"
+        (click)="toggleMenu()"
+      >
+        <span class="hamburger-top line"></span>
+        <span class="hamburger-middle line"></span>
+        <span class="hamburger-bottom line"></span>
+      </button>
+    </div>
+  </div>
+  <div
+    *ngIf="hamburgerOpen"
+    class="mobile-menu flex md:hidden flex-col items-center self-end py-3 mt-10 space-y-3 bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md md:hidden"
+  >
+    <a routerLink="">About</a>
+    <a routerLink="">Faculty</a>
+    <a routerLink="">Organization</a>
+    <a routerLink="">LMS</a>
+    <a routerLink="">Careers</a>
+    <a routerLink="">More</a>
+  </div>
+</nav>
